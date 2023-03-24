@@ -1,18 +1,18 @@
 # Spring Kafka Microservice Demo
 
-This repository contains a simple Spring project that demonstrates how to use Kafka to build a microservice. The project consists of the following modules:
+This repository contains a simple Spring project that demonstrates how to use Kafka to build a data pipeline. The project consists of the following modules:
 
-`producer`: sends messages to Kafka.
-`schema`: defines the schema for the messages sent to Kafka.
-`consumer`: receives messages from Kafka.
-`stream`: processes streams of messages from Kafka.
+`producer`: sends messages to Kafka.  
+`schema`: defines the schema for the messages sent to Kafka.  
+`consumer`: receives messages from Kafka.  
+`stream`: processes streams of messages from Kafka.  
 
 ## Prerequisites
 Before running this demo, ensure that you have the following software installed:
 
-JDK 17 ([link](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html))
-Maven ([link](https://maven.apache.org/download.cgi))
-Kafka ([link](https://kafka.apache.org/quickstart))
+JDK 17 ([link](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html))  
+Maven ([link](https://maven.apache.org/download.cgi))  
+Kafka ([link](https://kafka.apache.org/quickstart))  
 
 ## Getting Started
 To run the demo, follow these steps:
@@ -26,11 +26,11 @@ To run the demo, follow these steps:
 - Start the stream by running the following command: `java -jar stream/target/stream.jar`.   
 
 <br>
-The producer will send messages to Kafka, which will be received by the consumer. The stream will process the messages and write the output to the console.
+The producer will send messages to Kafka, which will be received by the stream. The stream will process the messages and send the output to kafka. The consumer will receive the messages processed by stream and write them to the console.
 
 ## Configuration
 
-The Kafka broker has default configurations as set in the how to, and the Kafka topics are configured in the application.yml files for each module.
+The Kafka broker has default configurations as set in the how to, and the Kafka topics are configured in the KafkaProducerConfig class of the Producer module.
 
 ## Contributing
 Contributions to this project are welcome.
