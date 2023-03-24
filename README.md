@@ -30,7 +30,7 @@ The producer will send messages to Kafka, which will be received by the consumer
 
 ## Configuration
 
-The Kafka broker has default configurations as set in the how to, and the Kafka topics are configured in the application.yml files for each module.
+The Kafka broker has default configurations as set in the how to, and the Kafka topics are configured in the KafkaProducerConfig class of the Producer module.
 
 ## Contributing
 Contributions to this project are welcome.
