@@ -10,9 +10,9 @@ This repository contains a simple Spring project that demonstrates how to use Ka
 ## Prerequisites
 Before running this demo, ensure that you have the following software installed:
 
-JDK 17 ([link](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html))
-Maven ([link](https://maven.apache.org/download.cgi))
-Kafka ([link](https://kafka.apache.org/quickstart))
+JDK 17 ([link](https://docs.oracle.com/en/java/javase/17/install/installation-jdk-microsoft-windows-platforms.html))  
+Maven ([link](https://maven.apache.org/download.cgi))  
+Kafka ([link](https://kafka.apache.org/quickstart))  
 
 ## Getting Started
 To run the demo, follow these steps:
