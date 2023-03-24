@@ -32,6 +32,7 @@ The flow of data from data source to data sink should be as follows:
 - The stream will process the messages and send the output to kafka. 
 - The consumer will receive the messages processed by stream and write them to the console.
 
+
 ## Configuration
 
 The Kafka broker has default configurations as set in the how to, and the Kafka topics are configured in the KafkaProducerConfig class of the Producer module.
