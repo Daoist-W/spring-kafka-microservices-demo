@@ -1,6 +1,6 @@
 # Spring Kafka Microservice Demo
 
-This repository contains a simple Spring project that demonstrates how to use Kafka to build a microservice. The project consists of the following modules:
+This repository contains a simple Spring project that demonstrates how to use Kafka to build a data pipeline. The project consists of the following modules:
 
 `producer`: sends messages to Kafka.
 `schema`: defines the schema for the messages sent to Kafka.
