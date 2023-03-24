@@ -26,7 +26,11 @@ To run the demo, follow these steps:
 - Start the stream by running the following command: `java -jar stream/target/stream.jar`.   
 
 <br>
-The producer will send messages to Kafka, which will be received by the stream. The stream will process the messages and send the output to kafka. The consumer will receive the messages processed by stream and write them to the console.
+
+The flow of data from data source to data sink should be as follows:
+- The producer will send messages to Kafka, which will be received by the stream. 
+- The stream will process the messages and send the output to kafka. 
+- The consumer will receive the messages processed by stream and write them to the console.
 
 ## Configuration
 
