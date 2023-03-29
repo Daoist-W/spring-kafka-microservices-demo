@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class AppKafkaListener {
 
+    static final String UPSTREAM_TOPIC = "CleansedYouBuyyClickStreamData";
     @KafkaListener(
-            topics = "YouBuyyClickStreamData",
+            topics = UPSTREAM_TOPIC,
             groupId = "ClickStreamConsumer-1",
             containerFactory = "factory" // must be added or will default to in-built factory
     )
