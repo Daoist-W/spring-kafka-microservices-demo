@@ -3,6 +3,7 @@ package com.isikodon.kafka.producer;
 import com.isikodon.kafka.schema.CustomerData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +19,11 @@ public class ProducerService {
     private KafkaTemplate<String, CustomerData> template;
 
     private static final String TOPIC = "YouBuyyClickStreamData";
+    @Value("${clickstream-data}")
+    private String path;
 
     public void sendMessage(){
-        try (BufferedReader br = new BufferedReader(new FileReader("producer/src/main/resources/ClickStreamMasterData.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = br.readLine()) != null) {
                 CustomerData data = new CustomerData(line);

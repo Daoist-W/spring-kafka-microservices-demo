@@ -17,6 +17,8 @@ Kafka ([link](https://kafka.apache.org/quickstart))
 ## Getting Started
 To run the demo, follow these steps:
 
+**Localhost**
+
 - Clone this repository. [instructions](https://www.perplexity.ai/search?q=how+to+clone+a+repository)  
 - Navigate to the root directory of the project. [instructions](https://www.perplexity.ai/search?q=how+to+avigate+to+the+root+directory+of+the+project)   
 - Run `mvn clean install` to build the project. [instructions](https://www.perplexity.ai/search?q=hot+to+mvn+clean+install+to+build+the+project)  
@@ -24,15 +26,30 @@ To run the demo, follow these steps:
 - In a new terminal (project root directory), start the producer by running the following command: `java -jar producer/target/producer-1.0-SNAPSHOT.jar`.
 - In a new terminal (project root directory), start the stream by running the following command: `java -jar stream/target/stream-1.0-SNAPSHOT.jar`.
 - In a new terminal (project root directory), start the consumer by running the following command: `java -jar consumer/target/consumer-1.0-SNAPSHOT.jar`.
-- In a new terminal (project root directory), run the following command `curl http://localhost:8080/api/v1/producer`
+- In a new terminal, run the following command `curl http://localhost:8080/api/v1/producer`
 - Observe the terminals for producer and consumer, notice how only the customer IDs with response times greater than 30ms are present in the consumer terminal
 
+
+**docker-compose**
+
+Assuming you have docker desktop installed:
+- Clone this repository
+- Navigate to the root directory of the project.
+- Run `docker compose up -d`
+- Run `docker container logs -f consumer` to watch the consumer output
+- In a new terminal, run the following command `curl http://localhost:8080/api/v1/producer`
+- Observe the output from the terminal
+
+
 <br>
+
 
 The flow of data from data source to data sink should be as follows:
 - Upon receiving a GET request, the producer will send 100K messages to Kafka, which will be received by the stream module. 
 - The stream module will process the messages, filtering out all messages with response times less than 30ms and send the output to a new topic in kafka. 
 - The consumer will receive the messages processed by stream module and write them to the console.
+
+
 
 
 ## Configuration
@@ -56,5 +73,16 @@ The following information is useful if you would like to run these applications 
 ## Contributing
 Contributions to this project are welcome.
 
+## Todo
+
+- [x] Implement local development configuration
+- [ ] Implement unit & integration testing
+- [x] Implement docker-compose configuration 
+- [ ] Implement kubernetes cluster configuration
+- [ ] Update documentation
+
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+
+
