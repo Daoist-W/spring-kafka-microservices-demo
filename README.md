@@ -56,7 +56,7 @@ Assuming you have Kubernetes installed and configured:
 - Run `kubectl logs -f <pod-name>` to watch the logs of the pod
 - Open a web browser and go to http://localhost/api/v1/producer to observe the output from the browser.
 
-Note: Make sure to replace <pod-name> with the actual name of the pod that is running the app.
+Note: Make sure to replace `<pod-name>` with the actual name of the pod that is running the app.
 
 <br>
 <hr>
