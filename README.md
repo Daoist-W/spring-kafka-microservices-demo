@@ -17,6 +17,8 @@ Kafka ([link](https://kafka.apache.org/quickstart))
 ## Getting Started
 To run the demo, follow these steps:
 
+<hr>
+
 **Localhost**
 
 - Clone this repository. [instructions](https://www.perplexity.ai/search?q=how+to+clone+a+repository)  
@@ -29,6 +31,7 @@ To run the demo, follow these steps:
 - In a new terminal, run the following command `curl http://localhost:8080/api/v1/producer`
 - Observe the terminals for producer and consumer, notice how only the customer IDs with response times greater than 30ms are present in the consumer terminal
 
+<hr>
 
 **docker-compose**
 
@@ -40,6 +43,7 @@ Assuming you have docker desktop installed and configured:
 - In a new terminal, run the following command `curl http://localhost:8080/api/v1/producer`
 - Observe the output from the terminal
 
+<hr>
 
 **Kubernetes (k8s)**
 
@@ -55,7 +59,7 @@ Assuming you have Kubernetes installed and configured:
 Note: Make sure to replace <pod-name> with the actual name of the pod that is running the app.
 
 <br>
-
+<hr>
 
 The flow of data from data source to data sink should be as follows:
 - Upon receiving a GET request, the producer will send 100K messages to Kafka, which will be received by the stream module. 
