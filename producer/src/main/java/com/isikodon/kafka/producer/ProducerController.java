@@ -13,7 +13,7 @@ public class ProducerController {
     private ProducerService service;
 
     @GetMapping
-    public void sendMessages(){
-        service.sendMessage();
+    public String sendMessages(){
+        return service.sendMessage();
     }
 }

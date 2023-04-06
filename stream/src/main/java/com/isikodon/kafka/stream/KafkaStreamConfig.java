@@ -64,7 +64,7 @@ public class KafkaStreamConfig {
     public KStream<String, CustomerData> kStream(StreamsBuilder kStreamBuilder) {
         KStream<String, CustomerData> stream = kStreamBuilder.stream(UPSTREAM_TOPIC);
         stream
-                .filter((s, customerData) -> customerData.getResponseTime() > 30)
+                .filter((s, customerData) -> customerData.getResponseTime() < 30)
                 .to(DOWNSTREAM_TOPIC);
         return stream;
     }

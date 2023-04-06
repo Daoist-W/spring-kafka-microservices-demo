@@ -22,17 +22,20 @@ public class ProducerService {
     @Value("${clickstream-data}")
     private String path;
 
-    public void sendMessage(){
+    public String sendMessage(){
+        int counter = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = br.readLine()) != null) {
                 CustomerData data = new CustomerData(line);
                 template.send(TOPIC, data);
                 log.info("Sent {}", data.getCustomerId());
+                counter++;
             }
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
         log.info("sending complete");
+        return String.format("sent %s messages", counter);
     }
 }

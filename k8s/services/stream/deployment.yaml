@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stream
+  labels:
+    app: stream
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: stream
+      labels:
+        app: stream
+    spec:
+      containers:
+        - name: stream
+          image: daoistw/stream:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_KAFKA_BOOTSTRAP-SERVERS
+              value: kafka:9092
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: stream
