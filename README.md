@@ -32,7 +32,7 @@ To run the demo, follow these steps:
 
 **docker-compose**
 
-Assuming you have docker desktop installed:
+Assuming you have docker desktop installed and configured:
 - Clone this repository
 - Navigate to the root directory of the project.
 - Run `docker compose up -d`
@@ -40,6 +40,19 @@ Assuming you have docker desktop installed:
 - In a new terminal, run the following command `curl http://localhost:8080/api/v1/producer`
 - Observe the output from the terminal
 
+
+**Kubernetes (k8s)**
+
+Assuming you have Kubernetes installed and configured:
+
+- Clone this repository
+- Navigate to the root directory of the project.
+- Run `cd .\k8s\; ./create_resources.bat; cd ..;` if on windows, or `cd .\k8s\; ./create_resources.sh; cd ..;` with bash to deploy the app
+- Run `kubectl get pods` to check if the pods are running
+- Run `kubectl logs -f <pod-name>` to watch the logs of the pod
+- Open a web browser and go to http://localhost/api/v1/producer to observe the output from the browser.
+
+Note: Make sure to replace <pod-name> with the actual name of the pod that is running the app.
 
 <br>
 
@@ -78,8 +91,8 @@ Contributions to this project are welcome.
 - [x] Implement local development configuration
 - [ ] Implement unit & integration testing
 - [x] Implement docker-compose configuration 
-- [ ] Implement kubernetes cluster configuration
-- [ ] Update documentation
+- [x] Implement kubernetes cluster configuration
+- [x] Update documentation
 
 
 ## License
